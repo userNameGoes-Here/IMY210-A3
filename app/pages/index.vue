@@ -12,9 +12,9 @@
         error.value = ''
 
         try {
-            const url = API_URL + '/api/posts?populate=*';
+            const url = API_URL + '/api/posts?populate=*'
 
-            if(selectedCategory.value !== '') {
+            if (selectedCategory.value !== '') {
             url = url + '&filters[category][id][$eq]=' + selectedCategory.value
             }
 

@@ -3,10 +3,14 @@
 </script>
 
 <template>
-  <div id="body">
-    <h1>Testing</h1>
+  <div>
+    <nav>
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/search">Search</NuxtLink>
+    </nav>
+
+    <NuxtPage />
   </div>
-  
 </template>
 
 <style scoped>
