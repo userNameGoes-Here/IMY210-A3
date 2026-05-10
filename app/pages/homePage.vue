@@ -60,6 +60,13 @@
     <main>
         <h1>Posts</h1>
 
+        <CategoryFilter :categories="categories" @filter="filterPosts"/>
 
+        <p v-if="loading">Loading...</p>
+        <p v-if="error">{{ error }}</p>
+
+        <div class="posts">
+            <PostCard v-for="post in posts" :key="post.id" :post="post"/>
+        </div>
     </main>
 </template>
