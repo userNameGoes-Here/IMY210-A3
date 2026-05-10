@@ -43,5 +43,20 @@
 <template>
     <main>
         <h1>Search</h1>
+
+        <form @submit.prevent="searchPosts">
+            <input v-model="searchTerm" type="text" placeholder="Search by title or author"/>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <p v-if="loading">Searching...</p>
+        <p v-if="error">{{ error }}</p>
+
+        <div class="posts">
+            <PostCard v-for="post in posts" :key="post.id" :post="post"/>
+        </div>
+
+        <p v-if="searched && posts.length === 0 && !loading">No results found.</p>
     </main>
 </template>
