@@ -60,3 +60,65 @@
         <p v-if="searched && posts.length === 0 && !loading">No results found.</p>
     </main>
 </template>
+
+<style scoped>
+    main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+    }
+
+    h1 {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    form {
+    background-color: white;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    border: 1px solid #e5e7eb;
+    }
+
+    input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    }
+
+    button {
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    }
+
+    button:hover {
+    background-color: #374151;
+    }
+
+    .posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+    }
+
+    @media (max-width: 850px) {
+    form {
+        flex-direction: column;
+    }
+
+    .posts {
+        grid-template-columns: 1fr;
+    }
+    }
+</style>
